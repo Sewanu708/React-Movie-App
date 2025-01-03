@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+form div:has(.input input:focus){
+  border: 1.2px solid #6100C2;
+}
+
+form div:has(.input input:focus) label{
+  background-color: black;
+}
+
+input:focus{
+  outline: none;
+}
+
+form div.incorrect:has(.input input:focus){
+  border: 1.2px solid #DC2626;
+}
+
+
+form div.incorrect:has(.input input:focus) label{
+  background-color: #DC2626;
+}
+
+
+form div.success:has(.input input:focus){
+  border: 1.2px solid #059669;
+}
+
+
+form div.success:has(.input input:focus) label{
+  background-color: #059669;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+@keyframes sidebar {
+  0%{
+      left:-100%;
+  }
+
+  100%{
+      left: 0%;
+  }
+}
+@keyframes closebar {
+  0%{
+      left:0%;
+  }
+
+  100%{
+      left: -100%;
+  }
+}
+
+.sidebar{
+  animation : sidebar 0.5s ease-out forwards;
+}
+
+.open{
+  display: flex;
+}
+.sidebar.close{
+  animation : closebar 0.5s ease-out forwards;
+}
+@media screen and (max-width:1024px) {
+  .sidebar{
+    display: none;
+  }
+}
+
